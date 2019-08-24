@@ -31,15 +31,19 @@ def shopSmart(orderList, fruitShops):
     """
     "*** YOUR CODE HERE ***"
     baratijas = {tiendas.name :tiendas.getPriceOfOrder(orderList) for tiendas in fruitShops}
+    print(baratijas)
     result = [i for i in fruitShops if i.name == min(baratijas, key=baratijas.get)]
+    print(result)
     return result[0]
 
 
 if __name__ == '__main__':
     "This code runs when you invoke the script from the command line"
     orders = [('apples', 1.0), ('oranges', 3.0)]
+
     dir1 = {'apples': 2.0, 'oranges': 1.0}
     shop1 = shop.FruitShop('shop1', dir1)
+
     dir2 = {'apples': 1.0, 'oranges': 5.0}
     shop2 = shop.FruitShop('shop2', dir2)
     shops = [shop1, shop2]
